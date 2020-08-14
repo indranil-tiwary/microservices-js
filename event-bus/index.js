@@ -8,7 +8,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/events', (req, res) => {
-  try {
     const event = req.body;
     console.log(event);
 
@@ -17,7 +16,6 @@ app.post('/events', (req, res) => {
     axios.post('http://localhost:4002/events', event);
 
     res.send({ status: 'OK' });
-  } catch (e) {}
 });
 
 app.listen(4005, () => {
